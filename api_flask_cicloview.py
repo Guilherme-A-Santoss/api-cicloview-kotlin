@@ -50,12 +50,12 @@ pecas = [
 
 usuarios = [{"usuario": "aluno", "senha": "impacta"}]
 
-@app.route("/user", methods=['GET'])
-def get():
+@app.route("/usuarios", methods=['GET'])
+def get_usuarios():
     return jsonify(usuarios)
 
 @app.route("/pecas", methods=['GET'])
-def get():
+def get_pecas():
     return jsonify(pecas)
 
 @app.route("/pecas/<int:id>", methods=['GET'])
