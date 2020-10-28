@@ -12,7 +12,7 @@ pecas = [
         "marca": "Shimano",
         "imagem": "https://http2.mlstatic.com/D_NQ_NP_628501-MLB43189727805_082020-O.webp",
         "codigo": "C2904L1"
-        "valor": 71.90
+        "valor": "R$ 71.90"
     },
     {
         "id": 2,
@@ -20,7 +20,7 @@ pecas = [
         "marca": "Paco",
         "imagem": "https://http2.mlstatic.com/D_NQ_NP_781848-MLB43105592528_082020-O.webp",
         "codigo": "C3934D2"
-        "valor": 23.90
+        "valor": "R$ 23.90"
     },
     {
         "id": 3,
@@ -28,7 +28,7 @@ pecas = [
         "marca": "Yamada",
         "imagem": "https://http2.mlstatic.com/D_NQ_NP_994456-MLB43473857848_092020-O.webp",
         "codigo": "S2414W6"
-        "valor": 33.90
+        "valor": "R$ 33.90"
     },
     {
         "id": 4,
@@ -36,7 +36,7 @@ pecas = [
         "marca": "Pirelli",
         "imagem": "https://http2.mlstatic.com/D_NQ_NP_920616-MLB31778384975_082019-O.webp",
         "codigo": "J4546P9"
-        "valor": 189.90
+        "valor": "R$ 189.90"
     },
     {
         "id": 5,
@@ -44,7 +44,7 @@ pecas = [
         "marca": "Absolute",
         "imagem": "https://http2.mlstatic.com/D_NQ_NP_600911-MLB43846632034_102020-O.webp",
         "codigo": "C4565Q2"
-        "valor": 599.49
+        "valor": "R$ 599.49"
     },
 ]
 
