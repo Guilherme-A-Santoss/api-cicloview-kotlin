@@ -48,6 +48,12 @@ pecas = [
     },
 ]
 
+usuarios = [{"usuario": "aluno", "senha": "impacta"}]
+
+@app.route("/user", methods=['GET'])
+def get():
+    return jsonify(usuarios)
+
 @app.route("/pecas", methods=['GET'])
 def get():
     return jsonify(pecas)
