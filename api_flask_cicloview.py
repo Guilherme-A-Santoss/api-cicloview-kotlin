@@ -11,40 +11,40 @@ pecas = [
         "nome": "Selim em gel",
         "marca": "Shimano",
         "imagem": "https://http2.mlstatic.com/D_NQ_NP_628501-MLB43189727805_082020-O.webp",
-        "codigo": "C2904L1"
-        "valor": "R$ 71.90"
+        "codigo": "C2904L1",
+        "valor": 71.90
     },
     {
         "id": 2,
         "nome": "Catraca Roda Livre Bike 18 Dentes Esferada Dourada",
         "marca": "Paco",
         "imagem": "https://http2.mlstatic.com/D_NQ_NP_781848-MLB43105592528_082020-O.webp",
-        "codigo": "C3934D2"
-        "valor": "R$ 23.90"
+        "codigo": "C3934D2",
+        "valor": 23.90
     },
     {
         "id": 3,
         "nome": "Câmbio Traseiro Com Gancheira 7 Velocidades Index P/bike Mtb",
         "marca": "Yamada",
         "imagem": "https://http2.mlstatic.com/D_NQ_NP_994456-MLB43473857848_092020-O.webp",
-        "codigo": "S2414W6"
-        "valor": "R$ 33.90"
+        "codigo": "S2414W6",
+        "valor": 33.90
     },
     {
         "id": 4,
         "nome": "Par Pneu Pirelli Speed 700x25 Tornado + 2 Camara+ 2 Fita A/f",
         "marca": "Pirelli",
         "imagem": "https://http2.mlstatic.com/D_NQ_NP_920616-MLB31778384975_082019-O.webp",
-        "codigo": "J4546P9"
-        "valor": "R$ 189.90"
+        "codigo": "J4546P9",
+        "valor": 189.90
     },
     {
         "id": 5,
         "nome": "Quadro Bike Mtb Aro 29 Absolute Nero Alumínio Disc Amarelo",
         "marca": "Absolute",
         "imagem": "https://http2.mlstatic.com/D_NQ_NP_600911-MLB43846632034_102020-O.webp",
-        "codigo": "C4565Q2"
-        "valor": "R$ 599.49"
+        "codigo": "C4565Q2",
+        "valor": 599.49
     },
 ]
 
