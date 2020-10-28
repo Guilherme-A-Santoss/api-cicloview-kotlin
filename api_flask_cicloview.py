@@ -5,58 +5,94 @@ import random
 
 app = Flask(__name__)
 
-disciplinas = [{"id": e, "nome": "Disciplina "+str(e), "ementa":"Ementa "+str(e), "foto":"https://cdn.pixabay.com/photo/2018/01/18/20/42/pencil-3091204_1280.jpg", "professor": "Professor Disciplina "+str(e)} for e in range(1,11)]
+bicicletas = [
+    {
+        "id": 1,
+        "nome": "Bicicleta Mountain",
+        "tipo": "Manutenção",
+        "imagem": "https://images.unsplash.com/photo-1572111504021-40abd3479ddb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+        "Proprietário": "Kauê"
+    },
+    {
+        "id": 2,
+        "nome": "Bicicleta de trilha",
+        "tipo": "Manutenção",
+        "imagem": "https://images.unsplash.com/photo-1566480047210-b10eaa1f8095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+        "Proprietário": "Lucas Rangel"
+    },
+    {
+        "id": 3,
+        "nome": "Bicicleta Speed",
+        "tipo": "Pintura",
+        "imagem": "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1308&q=80",
+        "Proprietário": "Guilherme M."
+    },
+    {
+        "id": 4,
+        "nome": "Bicicleta Mountain",
+        "tipo": "Manutenção",
+        "imagem": "https://images.unsplash.com/photo-1530173235220-f6825c107a77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
+        "Proprietário": "Fernando Henrique"
+    },
+    {
+        "id": 5,
+        "nome": "Bicicleta Mountain",
+        "tipo": "Manutenção",
+        "imagem": "https://images.unsplash.com/photo-1575585269294-7d28dd912db8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+        "Proprietário": "Paulo Castro"
+    },
+]
 
-@app.route("/disciplinas", methods=['GET'])
+@app.route("/bicicletas", methods=['GET'])
 def get():
-    return jsonify(disciplinas)
+    return jsonify(bicicletas)
 
-@app.route("/disciplinas/<int:id>", methods=['GET'])
+@app.route("/bicicletas/<int:id>", methods=['GET'])
 def get_one(id):
-    filtro = [e for e in disciplinas if e["id"] == id]
+    filtro = [e for e in bicicletas if e["id"] == id]
     if filtro:
         return jsonify(filtro[0])
     else:
         return jsonify({})
 
-@app.route("/disciplinas", methods=['POST'])
+@app.route("/bicicletas", methods=['POST'])
 def post():
-    global disciplinas
+    global bicicletas
     try:
         content = request.get_json()
 
         # gerar id
-        ids = [e["id"] for e in disciplinas]
+        ids = [e["id"] for e in bicicletas]
         if ids:
             nid = max(ids) + 1
         else:
             nid = 1
         content["id"] = nid
-        disciplinas.append(content)
-        return jsonify({"status":"OK", "msg":"disciplina adicionada com sucesso"})
+        bicicletas.append(content)
+        return jsonify({"status":"OK", "msg":"Bicicleta adicionada a fila com sucesso"})
     except Exception as ex:
         return jsonify({"status":"ERRO", "msg":str(ex)})
 
-@app.route("/disciplinas/<int:id>", methods=['DELETE'])
+@app.route("/bicicletas/<int:id>", methods=['DELETE'])
 def delete(id):
-    global disciplinas
+    global bicicletas
     try:
-        disciplinas = [e for e in disciplinas if e["id"] != id]
-        return jsonify({"status":"OK", "msg":"disciplina removida com sucesso"})
+        bicicletas = [e for e in bicicletas if e["id"] != id]
+        return jsonify({"status":"OK", "msg":"Bicicleta removida da fila com sucesso"})
     except Exception as ex:
         return jsonify({"status":"ERRO", "msg":str(ex)})
 
 @app.route("/push/<string:key>/<string:token>", methods=['GET'])
 def push(key, token):
-	d = random.choice(disciplinas)
+	b = random.choice(bicicletas)
 	data = {
 		"to": token,
 		"notification" : {
-			"title":d["nome"],
-			"body":"Você tem nova atividade em "+d['nome']
+			"title":b["nome"],
+			"body":"Você tem nova ordem de serviço em "+b['nome']
 		},
 		"data" : {
-			"disciplinaId":d['id']
+			"biscicletaId":b['id']
 		}
 	}
 	req = urllib.request.Request('http://fcm.googleapis.com/fcm/send')
